@@ -68,7 +68,7 @@ public:
 			{
 				//randomly assign each space a player id and their number of troops
 				if (_in_map[x][y] == '#')
-					board[x][y] = Space(rand() % numPlayers + 1, rand() % numPlayers + 1);
+				board[x][y] = Space(rand() % numPlayers + 1, rand() % numPlayers + 1);
 				else
 					board[x][y] = Space(); //null space if the char is a space
 			}
