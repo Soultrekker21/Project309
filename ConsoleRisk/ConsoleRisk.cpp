@@ -91,10 +91,33 @@ public:
 			std::cout << '\n';
 		}
 	}
+
+	//Print map with emphasis on player locations
+	void printMap(int playerId)
+	{
+		for (int x = 0; x < boardSize; x++)
+		{
+			for (int y = 0; y < boardSize; y++)
+			{
+				//Player IDs of -1 are invalid spaces (or empty) and not to print those out.
+				if (board[x][y].playerId != -1)
+				{
+					if (playerId != board[x][y].playerId)
+						std::cout << " " << board[x][y].playerId << "-" << board[x][y].troopCount << " ";
+					else
+						std::cout << " [" << board[x][y].troopCount << "] ";
+				}
+				else
+					std::cout << "     ";
+			}
+			std::cout << '\n';
+		}
+	}
 };
 
 int main()
 {
 	Board map = Board(4, _map);
 	map.printMap();
+	map.printMap(1);
 }
