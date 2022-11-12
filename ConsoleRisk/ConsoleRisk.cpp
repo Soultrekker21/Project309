@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <list>
 
 const int boardSize = 20;
 
@@ -105,7 +106,7 @@ public:
 					if (playerId != board[x][y].playerId)
 						std::cout << " " << board[x][y].playerId << "-" << board[x][y].troopCount << " ";
 					else
-						std::cout << " [" << board[x][y].troopCount << "] ";
+						std::cout << " [" << board[x][y].troopCount << "] "; //highlight player
 				}
 				else
 					std::cout << "     ";
@@ -113,6 +114,21 @@ public:
 			std::cout << '\n';
 		}
 	}
+};
+
+class Player {
+public:
+	int isAI;
+	std::list<Card> cards;
+};
+
+class Card {
+public:
+	int type;
+};
+
+class Game {
+
 };
 
 int main()
