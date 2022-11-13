@@ -127,7 +127,7 @@ public:
 	int type;
 };
 
-class Game {
+class Game { //queue goes here
 
 };
 
